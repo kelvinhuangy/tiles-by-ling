@@ -1003,10 +1003,21 @@ img{max-width:100%}
 <script>
 const SERIES_COLORS={'Marble':'#b8903a','Minimalistic':'#4a7d6a','Nature Stone':'#7a5c38','Wood':'#9a6d25','Travertine':'#8a7540','Terrazzo':'#3a7a8a','Encaustic':'#5a5a9a'};
 
-// Cart state — declared here so renderCards() can safely reference it
+// Cart state — session-based so carts do not carry into a fresh browser session
+const CART_STORAGE_KEY = 'tbl_cart_session_v1';
+const LEGACY_CART_STORAGE_KEY = 'tbl_cart_v2';
 let cart = [];
-(function loadCartFromStorage(){
-  try{ const s=localStorage.getItem('tbl_cart_v2'); if(s) cart=JSON.parse(s); }catch(e){}
+(function loadCartFromSession(){
+  try{
+    // Remove any older persistent cart so products do not leak across sessions.
+    localStorage.removeItem(LEGACY_CART_STORAGE_KEY);
+  }catch(e){}
+  try{
+    const s = sessionStorage.getItem(CART_STORAGE_KEY);
+    if(s) cart = JSON.parse(s);
+  }catch(e){
+    cart = [];
+  }
 })();
 
 const products=[
@@ -1592,7 +1603,16 @@ function setCartQty(id, val) {
 }
 
 function persistCart() {
-  try { localStorage.setItem('tbl_cart_v2', JSON.stringify(cart)); } catch(e){}
+  try { sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart)); } catch(e){}
+}
+
+function clearCart() {
+  cart = [];
+  try { sessionStorage.removeItem(CART_STORAGE_KEY); } catch(e){}
+  try { localStorage.removeItem(LEGACY_CART_STORAGE_KEY); } catch(e){}
+  updateCartBadge();
+  updateAllAtcButtons();
+  renderCartItems();
 }
 
 function updateCartBadge() {
@@ -1753,8 +1773,10 @@ function submitOrder() {
   msg += `☐ Callback / site consultation\n\n`;
   msg += `Thank you! Looking forward to hearing from you. 😊`;
 
-  // Close checkout and open WhatsApp after PDF initiates
+  // Clear cart for the current session once checkout is triggered,
+  // then open WhatsApp after the PDF download starts.
   closeCheckout();
+  clearCart();
   setTimeout(() => {
     window.open(`https://wa.me/6588130033?text=${encodeURIComponent(msg)}`, '_blank');
   }, 600);
