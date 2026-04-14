@@ -286,8 +286,10 @@ html{scroll-behavior:smooth}
 .count-badge{display:inline-block;background:var(--gold);color:var(--black);font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:2px;margin-left:6px;vertical-align:middle}
 
 /* ─── CART SYSTEM ─────────────────────────────────────────────── */
-.cart-btn-header{position:relative;display:flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(201,169,110,.35);color:rgba(255,255,255,.75);padding:8px 16px;border-radius:2px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s}
-.cart-btn-header:hover{border-color:var(--gold);color:var(--gold)}
+.cart-btn-header{position:relative;display:flex;align-items:center;gap:7px;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.55);color:var(--gold-light);padding:10px 16px;border-radius:3px;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 0 0 1px rgba(201,169,110,.08) inset}
+.cart-btn-header:hover{border-color:var(--gold);color:#fff;background:rgba(201,169,110,.2)}
+.cart-btn-header.has-items{background:var(--gold);color:var(--black);border-color:var(--gold);box-shadow:0 10px 24px rgba(201,169,110,.2)}
+.cart-btn-header.has-items:hover{background:var(--gold-light);color:var(--black)}
 .cart-btn-header svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .cart-count-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:var(--black);min-width:18px;height:18px;border-radius:9px;font-size:9px;font-weight:800;display:none;align-items:center;justify-content:center;font-family:var(--sans);padding:0 4px}
 .cart-count-badge.show{display:flex}
@@ -380,6 +382,13 @@ html{scroll-behavior:smooth}
 .co-back-btn{width:100%;background:transparent;color:var(--text-mid);border:1px solid var(--border);padding:11px;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .2s}
 .co-back-btn:hover{border-color:var(--charcoal);color:var(--charcoal)}
 @media(max-width:600px){.cart-sidebar{width:100vw}}
+
+/* ─── FLOATING VIEW CART ───────────────────────────────────── */
+.float-cart{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:650;display:none;align-items:center;gap:10px;background:var(--gold);color:var(--black);padding:12px 18px;border-radius:999px;font-family:var(--sans);font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;box-shadow:0 10px 28px rgba(0,0,0,.22);border:none;cursor:pointer}
+.float-cart.show{display:inline-flex}
+.float-cart .float-cart-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--black);color:#fff;font-size:11px;font-weight:800}
+@media(min-width:901px){.float-cart{right:28px;left:auto;transform:none;bottom:96px}}
+@media(max-width:600px){.header-nav{gap:10px}.header-phone{display:none}.cart-btn-header{padding:10px 12px;font-size:10px}.wa-btn-header{padding:10px 12px}.wa-btn-header span{display:none}.float-cart{bottom:84px}}
 
 
 
@@ -978,6 +987,12 @@ img{max-width:100%}
   </a>
 </div>
 
+<!-- FLOATING VIEW CART -->
+<button class="float-cart" id="float-cart" onclick="toggleCart()" aria-label="View cart">
+  View Cart
+  <span class="float-cart-count" id="float-cart-count">0</span>
+</button>
+
 <!-- BACK TO TOP -->
 <button class="back-top" id="back-top" title="Back to top">
   <svg viewBox="0 0 16 16"><polyline points="2,10 8,4 14,10"/></svg>
@@ -1424,6 +1439,8 @@ function closeModal(){
 
 document.getElementById('stat-products').textContent=products.length;
 renderCards();
+updateCartBadge();
+renderCartItems();
 
 // ── Magnify zoom on modal image ──────────────────────
 (function(){
@@ -1527,25 +1544,26 @@ document.getElementById('modal-overlay').addEventListener('click', function(e){
 // ═══════════════════════════════════════════════════════════════
 
 function addToCart(id, e) {
-  if(e && e.stopPropagation) e.stopPropagation();
+  if(e){ if(e.preventDefault) e.preventDefault(); if(e.stopPropagation) e.stopPropagation(); }
   const item = cart.find(i => i.id === id);
   if(item) { item.qty++; }
   else { cart.push({id, qty:1}); }
   persistCart();
   updateCartBadge();
   updateAllAtcButtons();
+  if(document.getElementById('cart-sidebar')?.classList.contains('open')) renderCartItems();
 }
 
 function addToCartFromModal() {
   if(!currentProduct) return;
-  addToCart(currentProduct.id);
-  // Update modal button immediately
-  const matcBtn = document.getElementById('modal-atc-btn');
-  if(matcBtn){
-    matcBtn.classList.add('in-cart');
-    matcBtn.innerHTML = `<svg viewBox="0 0 24 24" style="stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;width:16px;height:16px"><polyline points="4,12 9,17 20,6"/></svg> In Cart — View Cart`;
-    matcBtn.onclick = function(){ closeModal(); setTimeout(toggleCart,150); };
+  const alreadyInCart = cart.some(i => i.id === currentProduct.id);
+  if(alreadyInCart){
+    closeModal();
+    setTimeout(toggleCart,150);
+    return;
   }
+  addToCart(currentProduct.id);
+  openModal(currentProduct.id);
 }
 
 function removeFromCart(id) {
@@ -1569,6 +1587,8 @@ function setCartQty(id, val) {
   if(!item) return;
   item.qty = Math.max(1, parseInt(val) || 1);
   persistCart();
+  updateCartBadge();
+  renderCartItems();
 }
 
 function persistCart() {
@@ -1579,8 +1599,14 @@ function updateCartBadge() {
   const total = cart.reduce((s,i) => s + i.qty, 0);
   const badge = document.getElementById('cart-count-badge');
   const hdrCount = document.getElementById('cart-hdr-count');
+  const hdrBtn = document.querySelector('.cart-btn-header');
+  const floatCart = document.getElementById('float-cart');
+  const floatCount = document.getElementById('float-cart-count');
   if(badge){ badge.textContent = total; badge.classList.toggle('show', total > 0); }
   if(hdrCount) hdrCount.textContent = total + ' item' + (total !== 1 ? 's' : '');
+  if(hdrBtn) hdrBtn.classList.toggle('has-items', total > 0);
+  if(floatCount) floatCount.textContent = total;
+  if(floatCart) floatCart.classList.toggle('show', total > 0);
 }
 
 function updateAllAtcButtons() {
