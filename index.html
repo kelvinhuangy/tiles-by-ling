@@ -381,6 +381,137 @@ html{scroll-behavior:smooth}
 .co-back-btn:hover{border-color:var(--charcoal);color:var(--charcoal)}
 @media(max-width:600px){.cart-sidebar{width:100vw}}
 
+
+
+/* ─── MOBILE-FIRST RESPONSIVE ENHANCEMENTS ────────────────── */
+:root{--header-offset:100px}
+html,body{max-width:100%;overflow-x:hidden}
+img{max-width:100%}
+.filter-section{top:var(--header-offset)}
+
+@media (max-width: 1024px){
+  .header-inner{height:auto;min-height:84px;padding:12px 20px;gap:12px;flex-wrap:wrap}
+  .header-nav{margin-left:auto;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .logo-img{height:72px;width:72px}
+  .hero-inner{padding:72px 24px 60px}
+  .hero-stats{max-width:100%}
+  .filter-row{align-items:stretch}
+  .filter-label{padding-top:0}
+}
+
+@media (max-width: 768px){
+  .header{position:sticky}
+  .header-inner{padding:10px 14px;min-height:72px;align-items:center}
+  .logo-mark{gap:10px;min-width:0;flex:1 1 auto}
+  .logo-sub{font-size:9px;letter-spacing:2px;padding-left:10px}
+  .logo-img{height:58px;width:58px}
+  .header-nav{width:100%;justify-content:flex-start;gap:8px}
+  .header-phone{font-size:12px;order:3}
+  .cart-btn-header,.wa-btn-header{padding:9px 12px;font-size:10px;letter-spacing:1px}
+  .wa-btn-header{flex:1 1 auto;justify-content:center}
+
+  .hero-tagline-strip{padding:8px 12px}
+  .hero-tagline-strip-text{font-size:11px;letter-spacing:1px}
+  .hero-tagline-badge{margin-bottom:22px;padding:7px 12px}
+  .hero-tagline-badge-text{font-size:13px}
+  .hero-eyebrow{margin-bottom:18px}
+  .hero-headline{font-size:clamp(34px,11vw,52px);line-height:1.02}
+  .hero-sub{font-size:12px;letter-spacing:1.5px;margin-bottom:20px}
+  .hero-desc{font-size:14px;line-height:1.7;margin-bottom:28px}
+  .hero-ctas{gap:10px;margin-bottom:34px}
+  .btn-gold,.btn-ghost{width:100%;justify-content:center;padding:14px 18px}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:10px;padding-top:20px}
+  .hero-stat,.hero-stat:not(:first-child),.hero-stat:last-child{border-right:none;padding:0}
+  .stat-num{font-size:28px}
+
+  .collection-intro{align-items:flex-start;gap:8px}
+  .section-title{font-size:30px}
+
+  .filter-section{padding:10px 14px}
+  .filter-row{display:block;margin-bottom:12px}
+  .filter-label{display:block;min-width:0;margin-bottom:8px;font-size:9px;letter-spacing:1.8px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto}
+  .search-bar{flex-direction:column;align-items:stretch;gap:8px}
+  .search-input{max-width:none;min-width:0;width:100%;padding:11px 14px;font-size:14px}
+  .result-count{width:100%;text-align:center}
+  #clear-btn{width:100%}
+
+  .grid-section{padding:18px 14px 40px}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .card-body{padding:14px}
+  .card-name{font-size:15px}
+  .card-code{font-size:9px;margin-bottom:8px}
+  .card-desc{font-size:10px;-webkit-line-clamp:3}
+  .card-cta{align-items:stretch}
+  .view-btn{font-size:10px}
+  .atc-btn{width:100%;justify-content:center}
+
+  @media (hover:none){
+    .card-enquire-overlay{display:none}
+    .card:hover .card-img img{transform:none}
+  }
+
+  .modal-overlay{padding:0;align-items:flex-end}
+  .modal{max-width:none;width:100%;max-height:100dvh;height:100dvh;border:none;grid-template-columns:1fr;border-radius:0}
+  .modal-close{top:12px;right:12px;width:40px;height:40px}
+  .modal-gallery{padding:14px;gap:10px}
+  .modal-main-img{min-height:300px;height:42dvh;cursor:default}
+  .modal-main-img img{max-height:100%}
+  .modal-thumbs{gap:8px}
+  .modal-thumb{width:72px;height:72px}
+  .modal-info{padding:20px 16px 28px;gap:14px;overflow-y:auto}
+  .specs-grid{grid-template-columns:1fr}
+  .modal-desc-full,.modal-desc,.modal-use-text{font-size:12px}
+  .modal-nav{position:sticky;bottom:0;background:#fff;padding-top:10px}
+  .zoom-hint{font-size:8px;bottom:8px;right:8px}
+
+  .brand-story{padding:52px 16px}
+  .brand-story-inner{gap:32px}
+  .brand-story-text h2{font-size:34px}
+  .brand-story-text p{font-size:13px}
+  .brand-pillar{padding-left:16px}
+  .bp-title{font-size:18px}
+
+  .footer{padding:36px 16px 24px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+
+  .float-wa{bottom:16px;right:14px}
+  .back-top{bottom:16px;left:14px}
+
+  .cart-sidebar{right:-100vw;width:100vw}
+  .cart-hdr{padding:18px 16px 14px}
+  .cart-body{padding:0 14px}
+  .cart-foot{padding:14px 14px calc(18px + env(safe-area-inset-bottom))}
+  .cart-item{gap:10px}
+  .cart-item-thumb{width:58px;height:58px}
+
+  .co-overlay{padding:0;align-items:flex-end}
+  .co-modal{max-width:none;width:100%;height:100dvh;max-height:100dvh;border:none}
+  .co-modal-hdr{padding:18px 16px 14px}
+  .co-modal-hdr h2{font-size:22px}
+  .co-modal-hdr p{font-size:10px;max-width:88%;line-height:1.5}
+  .co-modal-x{top:14px;right:14px}
+  .co-housing-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width: 480px){
+  .header-phone{display:none}
+  .wa-btn-header{min-width:0}
+  .hero-inner{padding:58px 16px 52px}
+  .promise-inner{padding:28px 16px}
+  .promise-item{padding:18px 0}
+  .promise-title{font-size:18px}
+  .promise-desc{font-size:12px}
+  .product-grid{grid-template-columns:1fr 1fr}
+  .finish-badge,.series-badge,.note-badge{font-size:8px}
+  .modal-main-img{height:36dvh;min-height:260px}
+  .modal-name{font-size:24px}
+  .modal-code{font-size:10px;letter-spacing:1.5px}
+  .co-order-row{align-items:flex-start}
+}
+
 </style>
 </head>
 <body>
@@ -1725,6 +1856,110 @@ function generateInvoicePDF(name, mobile, address, purpose, housing, remarks, re
     console.error('PDF generation error:', err);
   }
 }
+
+
+
+// ── Dynamic header offset for sticky filters ────────────────
+(function(){
+  const root = document.documentElement;
+  const header = document.querySelector('.header');
+  function syncHeaderOffset(){
+    const h = header ? Math.ceil(header.getBoundingClientRect().height) : 100;
+    root.style.setProperty('--header-offset', h + 'px');
+  }
+  syncHeaderOffset();
+  window.addEventListener('load', syncHeaderOffset);
+  window.addEventListener('resize', syncHeaderOffset, {passive:true});
+  window.addEventListener('orientationchange', syncHeaderOffset, {passive:true});
+})();
+
+// ── Better mobile modal image zoom / tap support ────────────
+(function(){
+  const container = document.querySelector('.modal-main-img');
+  const img = document.getElementById('modal-main-img');
+  const hint = document.querySelector('.zoom-hint');
+  if(!container || !img) return;
+
+  let touchZoom = 1;
+  let lastTap = 0;
+  let startX = 0;
+  let startY = 0;
+  let translateX = 0;
+  let translateY = 0;
+  let lastTranslateX = 0;
+  let lastTranslateY = 0;
+  let isDragging = false;
+
+  function isTouchDevice(){
+    return window.matchMedia('(hover: none)').matches || 'ontouchstart' in window;
+  }
+
+  function applyTouchTransform(){
+    if(!isTouchDevice()) return;
+    img.style.transition = 'transform .18s ease';
+    img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${touchZoom})`;
+    container.style.cursor = touchZoom > 1 ? 'move' : 'default';
+  }
+
+  function resetTouchZoom(){
+    touchZoom = 1;
+    translateX = 0;
+    translateY = 0;
+    lastTranslateX = 0;
+    lastTranslateY = 0;
+    applyTouchTransform();
+  }
+
+  container.addEventListener('touchstart', function(e){
+    if(!isTouchDevice()) return;
+    const now = Date.now();
+    if(e.touches.length === 1){
+      if(now - lastTap < 280){
+        if(touchZoom > 1){
+          resetTouchZoom();
+        } else {
+          touchZoom = 2.2;
+          translateX = 0;
+          translateY = 0;
+          lastTranslateX = 0;
+          lastTranslateY = 0;
+          applyTouchTransform();
+          if(hint) hint.textContent = 'Drag to pan · Double tap to reset';
+        }
+      }
+      lastTap = now;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = touchZoom > 1;
+      img.style.transition = 'none';
+    }
+  }, {passive:true});
+
+  container.addEventListener('touchmove', function(e){
+    if(!isTouchDevice() || !isDragging || touchZoom <= 1 || e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    translateX = lastTranslateX + dx;
+    translateY = lastTranslateY + dy;
+    img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${touchZoom})`;
+  }, {passive:true});
+
+  container.addEventListener('touchend', function(){
+    if(!isTouchDevice()) return;
+    lastTranslateX = translateX;
+    lastTranslateY = translateY;
+    isDragging = false;
+    if(hint && touchZoom <= 1) hint.textContent = 'Double tap to zoom';
+  }, {passive:true});
+
+  const touchObserver = new MutationObserver(function(){
+    if(isTouchDevice()){
+      resetTouchZoom();
+      if(hint) hint.textContent = 'Double tap to zoom';
+    }
+  });
+  touchObserver.observe(img, { attributes: true, attributeFilter: ['src'] });
+})();
 
 // ── Init cart badge on load (cart already loaded at top of script) ──
 updateCartBadge();
