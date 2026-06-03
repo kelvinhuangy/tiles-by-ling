@@ -344,6 +344,8 @@ img{max-width:100%;display:block}
       <div class="sheet-group-label">Size</div>
       <div class="chips-wrap" id="size-chips">
         <button class="chip active" data-filter="size" data-val="all">All</button>
+        <button class="chip" data-filter="size" data-val="200x1000">200×1000</button>
+        <button class="chip" data-filter="size" data-val="200x1200">200×1200</button>
         <button class="chip" data-filter="size" data-val="50x200">50×200</button>
         <button class="chip" data-filter="size" data-val="65x265">65×265</button>
         <button class="chip" data-filter="size" data-val="150x150">150×150</button>
@@ -729,230 +731,227 @@ const products=[
 {id:'HP09',name:'PETAL GREEN',series:'Encaustic',size:'400×400mm',sizeKey:'400x400',finish:'Matte',img:'HP09.jpg',gallery:['HP09-01.jpg','HP09-02.jpg'],desc:'Crystal Pattern Collection features a retro sage-and-white clover pattern that softens bathrooms and adds playful personality. It works best as a design accent, adding rhythm, personality and a more curated boutique feel to smaller zones.',style:'Vintage modern; retro chic; family contemporary',use:'Bathroom floor, powder room, kids bath, feature wall'},
 {id:'HP81',name:'DARK FLORAL',series:'Encaustic',size:'400×400mm',sizeKey:'400x400',finish:'Matte',img:'HP81.jpg',gallery:['HP81-01.jpg','HP81-02.jpg'],desc:'Crystal Pattern Collection features a petal medallion motif framed with a dark border, giving the surface a more classic ornamental feel. It works best as a design accent, adding rhythm, personality and a more curated boutique feel to smaller zones.',style:'Heritage modern; colonial-inspired; statement eclectic',use:'Entry accent, powder room floor, decorative inset, café floor'},
 {id:'HP82',name:'STARBURST',series:'Encaustic',size:'400×400mm',sizeKey:'400x400',finish:'Matte',img:'HP82.jpg',gallery:['HP82-01.jpg','HP82-02.jpg'],desc:'Crystal Pattern Collection features a starburst motif with a dark frame for a more dramatic, old-world decorative statement. It works best as a design accent, adding rhythm, personality and a more curated boutique feel to smaller zones.',style:'Artisanal heritage; boutique hospitality; eclectic luxe',use:'Powder room, feature inset, bathroom floor, niche accent'},
+// WOOD — JMT 200x1000 Planks
+{id:'JMT10O9R',name:'SOUTH ASIA PINE',series:'Wood',size:'200×1000mm',sizeKey:'200x1000',finish:'Matte',img:'JMT10O9R.jpg',gallery:['JMT10O9R-01.jpg','JMT10O9R-02.jpg','JMT10O9R-03.jpg'],desc:'South Asia Pine reads as a warm honey-pine timber with a naturally open grain and a sun-warmed softness, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a softer, more residential atmosphere without losing durability.',style:'Japandi; warm contemporary; resort casual',use:'Living room floor, bedroom floor, study, dining area, feature wall'},
+{id:'JMT1201',name:'SWEDISH SPRUCE',series:'Wood',size:'200×1000mm',sizeKey:'200x1000',finish:'Matte',img:'JMT1201.jpg',gallery:['JMT1201-01.jpg','JMT1201-02.jpg','JMT1201-03.jpg'],desc:'Swedish Spruce reads as a pale natural spruce with clean linear grain and a Scandinavian lightness, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a calm, airy residential atmosphere without losing durability.',style:'Japandi; Scandinavian; soft minimalism',use:'Bedroom floor, living room floor, study, walk-in wardrobe, feature wall'},
+{id:'JMT1205',name:'NORTH AMERICA POPULUS',series:'Wood',size:'200×1000mm',sizeKey:'200x1000',finish:'Matte',img:'JMT1205.jpg',gallery:['JMT1205-01.jpg','JMT1205-02.jpg','JMT1205-03.jpg'],desc:'North America Populus reads as a warm amber-honey wood with vibrant grain detail and an inviting residential energy, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a richer, more expressive timber feel without losing durability.',style:'Warm contemporary; resort casual; boutique residential',use:'Living room floor, dining area, bedroom, feature wall'},
+{id:'JMT1206',name:'SOUTH AMERICA ELM',series:'Wood',size:'200×1000mm',sizeKey:'200x1000',finish:'Matte',img:'JMT1206.jpg',gallery:['JMT1206-01.jpg','JMT1206-02.jpg','JMT1206-03.jpg','JMT1206-04.jpg'],desc:'South America Elm reads as a medium warm-brown timber with natural grain variation and a grounded, earthy character, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a confident, nature-connected floor without losing durability.',style:'Warm contemporary; Japandi; transitional',use:'Living room floor, dining area, bedroom, study, retail floor'},
+{id:'JMT1207',name:'ORIENTAL CHERRY',series:'Wood',size:'200×1000mm',sizeKey:'200x1000',finish:'Matte',img:'JMT1207.jpg',gallery:['JMT1207-01.jpg','JMT1207-02.jpg','JMT1207-03.jpg'],desc:'Oriental Cherry reads as a warm mid-tone timber with fine directional grain and a composed residential warmth, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a versatile, liveable floor with character without losing durability.',style:'Warm contemporary; classic modern; boutique residential',use:'Bedroom floor, living room floor, study, dining area, feature wall'},
+// WOOD — JMT 200x1200 Planks
+{id:'JMT2230',name:'SOUTH AMERICA TEAK',series:'Wood',size:'200×1200mm',sizeKey:'200x1200',finish:'Matte',img:'JMT2230.jpg',gallery:['JMT2230-01.jpg','JMT2230-02.jpg','JMT2230-03.jpg'],desc:'South America Teak reads as a natural warm teak with a long graceful grain and a calming, organic softness in a wider plank format, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want an expansive, resort-style floor without losing durability.',style:'Resort contemporary; Japandi; warm minimalism',use:'Bedroom floor, living room floor, open-plan spaces, feature wall'},
+{id:'JMT2232',name:'FAR EAST BIRCH',series:'Wood',size:'200×1200mm',sizeKey:'200x1200',finish:'Matte',img:'JMT2232.jpg',gallery:['JMT2232-01.jpg','JMT2232-02.jpg','JMT2232-03.jpg','JMT2232-04.jpg'],desc:'Far East Birch reads as a pale cream-birch with a quiet, almost translucent lightness that opens up a room beautifully in a wider plank format, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a serene, light-maximising floor without losing durability.',style:'Japandi; soft minimalism; Scandinavian',use:'Bedroom floor, living room floor, nursery, walk-in wardrobe, feature wall'},
+{id:'JMT2233',name:'PINUS CEMBRA',series:'Wood',size:'200×1200mm',sizeKey:'200x1200',finish:'Matte',img:'JMT2233.jpg',gallery:['JMT2233-01.jpg','JMT2233-02.jpg','JMT2233-03.jpg','JMT2233-04.jpg','JMT2233-05.jpg'],desc:'Pinus Cembra reads as a warm sandy pine with a fine, even grain and a gentle Alpine warmth in a wider plank format, giving the warmth of timber with the maintenance ease of porcelain. It is especially effective where you want a soft, welcoming residential floor without losing durability.',style:'Japandi; warm minimalism; resort casual',use:'Bedroom floor, living room floor, dining area, feature wall'},
+// YD SERIES — 600×600mm Matte — Marble
+{id:'YD6070',name:'KINTSUGI BLACK',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6070.jpg',gallery:[],desc:'Kintsugi Black presents a near-black marble surface with dramatic crossing lines of gold and silver — an echo of the Japanese art of mending with gold, bold, graphic and deeply one-of-a-kind for spaces that celebrate beauty through contrast. The matte surface absorbs light and gives the room a grounded, intimate and powerfully sophisticated mood.',style:'Dark luxury; Art Deco drama; Japanese-inspired contemporary',use:'Feature wall, powder room, bar frontage, statement floor, boutique lobby'},
+{id:'YD62995',name:'NERO BIANCO',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD62995.jpg',gallery:[],desc:'Nero Bianco presents a deep black marble canvas with bold sweeping white veining — dramatic, high-contrast and effortlessly luxurious. The matte finish softens the drama into something considered and deeply modern, ideal for statement interiors that refuse to whisper.',style:'Dark luxury; fashion editorial; boutique hotel drama',use:'Feature wall, powder room, statement floor, bar, reception lobby'},
+{id:'YD6701',name:'IMPERIAL MIST',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6701.jpg',gallery:[],desc:'Imperial Mist presents a pale grey stone with delicate flowing movement — airy, refined and quietly commanding. The soft matte finish creates a calm, well-composed surface that pairs beautifully with brass, timber and light-toned furnishings.',style:'Quiet luxury; contemporary resort; warm modern',use:'Living room floor, bedroom floor, bathroom wall, powder room, feature wall'},
+{id:'YD6702',name:'SILVER FLOW',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6702.jpg',gallery:[],desc:'Silver Flow presents a medium grey stone with generous flowing movement and a layered, atmospheric depth. The soft matte surface reads composed and architectural, ideal for interiors that value restraint and material richness in equal measure.',style:'Urban contemporary; architectural luxury; quiet modern',use:'Living room floor, study, bathroom wall, feature wall, commercial lounge'},
+{id:'YD6703',name:'PEARL GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6703.jpg',gallery:[],desc:'Pearl Grey presents a soft silver-grey stone with gentle linear movement and a calm, refined character. The matte finish creates a serene, well-resolved surface that works across a wide range of interior palettes.',style:'Minimalist luxury; contemporary resort; spa-inspired modern',use:'Living room floor, bedroom floor, bathroom wall, open-plan spaces'},
+{id:'YD6705',name:'THUNDER GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6705.jpg',gallery:[],desc:'Thunder Grey presents a darker grey stone with bold mineral texture and a powerful presence. The matte finish gives the surface a grounded, architectural weight ideal for spaces seeking drama without glossiness.',style:'Dark contemporary; boutique hotel; bold minimalism',use:'Feature wall, statement floor, bathroom wall, lounge, commercial spaces'},
+{id:'YD6803',name:'DUNE GOLD',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6803.jpg',gallery:[],desc:'Dune Gold presents a warm beige marble with rich golden movement and a sun-warmed, inviting depth. The soft matte finish creates a calm, well-composed surface that pairs beautifully with warm brass, rattan and natural timber.',style:'Warm luxury; resort contemporary; Mediterranean modern',use:'Living room floor, bedroom floor, bathroom wall, feature wall, hospitality spaces'},
+{id:'YD6806',name:'GLACIER WHITE',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6806.jpg',gallery:[],desc:'Glacier White presents a near-white stone with barely-there movement and a clean, expansive calm. The soft matte surface is the ideal canvas for light-filled interiors seeking serenity and openness across every surface.',style:'Minimalist; spa contemporary; quiet luxury',use:'Open-plan living floor, bedroom floor, bathroom wall, gallery-like interiors'},
+{id:'YD6809',name:'SLATE DRIFT',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6809.jpg',gallery:[],desc:'Slate Drift presents a medium grey stone with sweeping, directional movement and a composed, contemporary depth. The matte finish gives the surface a grounded quality that anchors a room with quiet confidence.',style:'Urban contemporary; quiet luxury; modern masculine',use:'Living room floor, study, bathroom wall, commercial lounge, feature wall'},
+{id:'YD6831',name:'MORNING GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6831.jpg',gallery:[],desc:'Morning Grey presents a very light grey marble with the softest hint of veining — clean, refined and deeply versatile. The matte precision-engraved surface adds a subtle textural dimension that elevates it beyond a plain tile.',style:'Quiet luxury; minimalist; spa contemporary',use:'Living room floor, bedroom floor, bathroom wall, open-plan spaces, feature wall'},
+{id:'YD6832',name:'PEWTER STONE',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6832.jpg',gallery:[],desc:'Pewter Stone presents a medium grey marble surface with elegant fine veining and a composed, sophisticated character. The matte engraved finish adds depth and tactile quality to a surface that reads both timeless and distinctly modern.',style:'Contemporary luxury; architectural modern; boutique hotel',use:'Living room floor, feature wall, bathroom wall, study, commercial spaces'},
+{id:'YD6833',name:'GRAPHITE NOIR',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6833.jpg',gallery:[],desc:'Graphite Noir presents a deep charcoal marble surface with fine white veining that catches light beautifully against the dark ground. The matte precision-engraved finish gives this bold surface a tactile refinement ideal for statement-driven spaces.',style:'Dark luxury; boutique hotel drama; contemporary bold',use:'Feature wall, powder room, statement floor, bar, reception lobby'},
+{id:'YD6838',name:'PALE EMPEROR',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6838.jpg',gallery:[],desc:'Pale Emperor presents a light grey marble with elegant marble veining and a refined, architectural quality. The matte engraved surface adds tactile depth to a tone that works beautifully across living and wet spaces alike.',style:'Quiet luxury; minimalist marble; spa-inspired modern',use:'Living room floor, bathroom wall, bedroom floor, feature wall, powder room'},
+{id:'YD6839',name:'STEEL EMPEROR',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6839.jpg',gallery:[],desc:'Steel Emperor presents a cool medium grey marble with bold veining and a composed, architectural authority. The matte engraved finish brings a considered tactile quality that distinguishes it from glossy marble without sacrificing visual richness.',style:'Contemporary luxury; urban modern; bold minimalism',use:'Living room floor, feature wall, bathroom wall, commercial lounge'},
+{id:'YD6840',name:'DARK EMPEROR',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6840.jpg',gallery:[],desc:'Dark Emperor presents a deep charcoal-grey marble with generous white veining and a powerfully confident presence. The matte engraved finish gives this dark statement surface the refinement of a considered interior decision rather than mere drama.',style:'Dark luxury; boutique hotel; contemporary statement',use:'Feature wall, statement floor, powder room, bar, lounge'},
+{id:'YD6513B',name:'SILVER PLAIN',series:'Minimalistic',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6513B.jpg',gallery:[],desc:'Silver Plain offers a very light silver-grey plain tile with a refined soft-engraved matte surface that adds quiet tactile depth. It creates a calm, well-composed backdrop that pairs beautifully with timber, layered neutrals and understated metal details.',style:'Minimalist; spa contemporary; quiet luxury',use:'Living room floor, bedroom floor, bathroom wall, open-plan spaces'},
+{id:'YD6517B',name:'STORM CLOUD',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6517B.jpg',gallery:[],desc:'Storm Cloud presents a medium grey stone with layered clouded movement and a moody, considered depth. The soft-engraved matte surface gives this surface a refined tactile quality suited to more expressive contemporary schemes.',style:'Urban contemporary; boutique hotel; architectural modern',use:'Living room floor, feature wall, bathroom wall, study, commercial spaces'},
+{id:'YD6911B',name:'WARM SAND PEARL',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6911B.jpg',gallery:[],desc:'Warm Sand Pearl presents a soft cream-beige marble with delicate movement and a gentle warmth. The soft-engraved matte finish creates a welcoming, grounded surface that brings quiet luxury to residential and hospitality spaces alike.',style:'Warm luxury; resort contemporary; quiet classic',use:'Living room floor, bedroom floor, bathroom wall, feature wall, hospitality'},
+{id:'YD6912B',name:'GREY TAUPE PEARL',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6912B.jpg',gallery:[],desc:'Grey Taupe Pearl presents a warm grey-taupe stone with subtle movement and a composed, versatile character. The soft-engraved matte surface sits beautifully between warm and cool palettes, making it one of the most adaptable tiles in the collection.',style:'Quiet luxury; transitional modern; contemporary resort',use:'Living room floor, study, bathroom wall, bedroom floor, commercial lounge'},
+{id:'YD6915B',name:'COOL PEARL GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6915B.jpg',gallery:[],desc:'Cool Pearl Grey presents a medium cool grey marble with a calm, refined character and an understated luxury. The soft-engraved matte finish gives this versatile surface the depth and tactile quality to work in everything from master bathrooms to open-plan living rooms.',style:'Contemporary minimalism; boutique hotel; spa-inspired modern',use:'Living room floor, bedroom floor, bathroom wall, feature wall'},
+{id:'YD6916B',name:'WARM MARBLE GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6916b.jpg',gallery:[],desc:'Warm Marble Grey presents a warm grey stone with flowing marble movement and a richly layered surface. The soft-engraved matte finish captures the character of aged European stone with a considered contemporary refinement.',style:'Warm luxury; quiet contemporary; modern classic',use:'Living room floor, bathroom wall, bedroom floor, feature wall, hospitality'},
+{id:'YD6920B',name:'DARK PEARL GREY',series:'Marble',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6920B.jpg',gallery:[],desc:'Dark Pearl Grey presents a medium-dark grey marble with generous movement and a confident, grounded presence. The soft-engraved matte surface gives this deeper tone a refined quality that suits both statement and background roles in larger spaces.',style:'Contemporary luxury; boutique hotel; architectural bold',use:'Living room floor, feature wall, bathroom wall, commercial spaces'},
+{id:'YD613',name:'MONET BEIGE',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD613.jpg',gallery:['YD613-01.jpg'],desc:'Monet Beige is a warm beige limestone surface with a fine, naturally textured character drawn from Italian dry-granule technology. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Mediterranean modern; warm minimalism; resort casual',use:'Living room floor, bathroom floor, bedroom floor, covered outdoor, feature wall'},
+{id:'YD615',name:'MONET CREAM',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD615.jpg',gallery:['YD615-01.jpg','YD615 -03.jpg'],desc:'Monet Cream is a soft cream limestone tile with gentle organic texture and a light, airy character. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Warm minimalism; Japandi; Mediterranean resort',use:'Bathroom floor, living room floor, bedroom, covered outdoor, kitchen floor'},
+{id:'YD616',name:'MONET GREY',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD616.jpg',gallery:['YD616-01.jpg'],desc:'Monet Grey is a cool grey limestone tile with a refined textured surface and a clean, composed character. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Contemporary minimalism; urban modern; spa casual',use:'Bathroom floor, living room floor, study, kitchen floor, covered outdoor'},
+{id:'YD617',name:'MONET EARTH',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD617.jpg',gallery:['YD617-01.jpg'],desc:'Monet Earth is a warm brown-grey limestone tile with rich natural texture and a grounded, organic warmth. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Wabi-sabi; warm contemporary; organic modern',use:'Bathroom floor, living room floor, covered outdoor, kitchen floor, feature wall'},
+{id:'YD618',name:'PORTLAND CREAM',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD618.jpg',gallery:['YD618-01.jpg'],desc:'Portland Cream is a warm cream Portland stone tile with a fine, rugged surface texture that echoes the character of classical European stone. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Mediterranean modern; warm minimalism; classical contemporary',use:'Living room floor, bathroom floor, covered outdoor, bedroom, kitchen floor'},
+{id:'YD619',name:'PORTLAND WHITE',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD619.jpg',gallery:['YD619-01.jpg'],desc:'Portland White is a bright cream-white Portland stone tile with an airy, textured surface that brings a clean, classical elegance to both residential and wet-zone applications. The matte surface is practical for wetter areas, but still reads considered and design-led.',style:'Minimalist; spa contemporary; Mediterranean light',use:'Bathroom floor, living room floor, open-plan spaces, covered outdoor'},
+{id:'YD620',name:'PORTLAND GREY',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD620.jpg',gallery:['YD620-01.jpg'],desc:'Portland Grey is a medium grey Portland stone tile with a textured matte surface and a composed, urban character. The super wear-resistant surface delivers practical performance without sacrificing its design-led aesthetic.',style:'Urban contemporary; minimalist; architectural modern',use:'Bathroom floor, living room floor, study, kitchen floor, commercial spaces'},
+{id:'YD621',name:'SAHARA CREAM',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD621.jpg',gallery:['YD621-01.jpg'],desc:'Sahara Cream is a warm cream sandstone tile with a richly textured, organically alive surface that brings earthy warmth and natural depth to interiors. The matte surface is practical for wetter areas, but still reads considered and design-led rather than purely utilitarian.',style:'Wabi-sabi; warm minimalism; organic contemporary',use:'Bathroom floor, living room floor, feature wall, covered outdoor, bedroom floor'},
+{id:'YD6012',name:'CHALK STRIPE WHITE',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD6012.jpg',gallery:[],desc:'Chalk Stripe White is a soft cream-white stone tile with barely-there horizontal striations that give the surface a quiet, refined movement without visual noise. The matte surface creates a calm, well-composed backdrop that pairs beautifully with timber, layered neutrals and understated metal details.',style:'Minimalist; Japandi; spa contemporary',use:'Living room floor, bedroom floor, bathroom wall, open-plan spaces'},
+{id:'YD66002',name:'DUNE BEIGE',series:'Nature Stone',size:'600×600mm',sizeKey:'600x600',finish:'Matte',img:'YD66002.jpg',gallery:[],desc:'Dune Beige is a warm sand-beige stone tile with gentle directional movement and a sun-warmed, grounded depth. The matte surface creates a calm, well-composed backdrop that pairs beautifully with timber, layered neutrals and understated metal details.',style:'Warm minimalism; resort contemporary; Mediterranean modern',use:'Living room floor, bedroom floor, bathroom wall, covered outdoor, feature wall'},
 // SUBWAY SERIES — 50×200mm, Glossy
-{id:'QC52100X',name:'PORCELAIN WHITE',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52100X.jpg',gallery:['QC52100X-1.jpg','QC52100X-2.jpg'],desc:'Porcelain White is the definitive clean-white subway tile — a crisp, light-reflective glazed surface with the faintest hand-made irregularity that keeps it feeling crafted rather than clinical. The glossy finish amplifies available light, making small rooms feel bigger, brighter and freshly laundered. Equally at home in a classic stretcher bond or a contemporary stack-bond layout.',style:'Classic contemporary; Scandi-modern; fresh coastal; timeless neutral',use:'Kitchen backsplash, bathroom feature wall, powder room, laundry, cafe counter. Recommended laying patterns: stretcher (brick) bond, stack bond, herringbone, crisscross'},
-{id:'QC52101X',name:'OAT MILK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52101X.jpg',gallery:['QC52101X-1.jpg'],desc:'Oat Milk is a softly warm cream-ivory subway tile with a glossy glaze that catches the light and wraps a room in quiet warmth. It is the tile for interiors that want comfort without cliche — cafe-like in its approachability yet refined enough to hold its own alongside brass fittings, natural oak and linen. Lay it in herringbone for a boutique look or stretcher bond for easy classicism.',style:'Warm modern; Japandi; organic contemporary; boutique hospitality',use:'Kitchen backsplash, breakfast nook, powder room, cafe wall. Recommended laying patterns: herringbone, stretcher bond, basket weave'},
-{id:'QC52102X',name:'DOVE GREY',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52102X.jpg',gallery:['QC52102X-1.jpg'],desc:'Dove Grey is a warm greige subway tile with a subtle mottled glaze that gives the surface a gentle hand-crafted depth — neither cool industrial grey nor beige, but the quiet middle ground that pairs with almost anything. The glossy finish keeps the tone elevated and easy to clean, while the laying pattern carries all the design weight.',style:'Soft contemporary; transitional; quiet luxe; Japandi-adjacent',use:'Kitchen backsplash, bathroom wall, utility room, powder room. Recommended laying patterns: stack bond, stretcher bond, herringbone, diagonal'},
-{id:'QC52104X',name:'SAGE PAVILION',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52104X.jpg',gallery:['QC52104X-1.jpg'],desc:'Sage Pavilion is a dusty, herbal green subway tile with a glossy artisanal glaze whose tonal variation recalls aged celadon pottery. It brings a considered, garden-room calm to interiors — fresh without being loud, coloured without being playful. Exceptional in a herringbone feature wall or stack-bond backsplash where the colour can do the talking.',style:'Botanical modern; quiet colour; heritage contemporary; boutique cafe',use:'Kitchen backsplash, feature wall, powder room, cafe / bar wall. Recommended laying patterns: herringbone, stack bond, basket weave'},
-{id:'QC52105X',name:'MULBERRY DUSK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52105X.jpg',gallery:['QC52105X-1.jpg'],desc:'Mulberry Dusk is a deep, dusty mauve subway tile with a glossy glaze that lends the surface an almost wine-stained richness — grown-up, unexpected and quietly editorial. It creates a moody, atmospheric envelope ideal for powder rooms and intimate bar spaces where the goal is a space that feels genuinely different.',style:'Editorial moody; boutique hospitality; maximalist luxe; heritage modern',use:'Powder room feature wall, bar backsplash, boutique retail, hospitality. Recommended laying patterns: stack bond, stretcher bond, herringbone, diagonal'},
-{id:'QC52106X',name:'MUSTARD SILK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52106X.jpg',gallery:['QC52106X-1.jpg'],desc:'Mustard Silk is a warm ochre subway tile with a rich, mottled glaze that reads golden in daylight and honey-deep under warm lighting. It injects personality and sun-warmed optimism into a kitchen or bar without tipping into novelty. Best used in generous runs where the tonal variation can breathe — a basket-weave layout amplifies its artisanal character beautifully.',style:'Warm maximalist; Mediterranean modern; cafe chic; retro contemporary',use:'Kitchen backsplash, bar feature wall, cafe wall, niche accent. Recommended laying patterns: basket weave, herringbone, stretcher bond, crisscross'},
-{id:'QC52107X',name:'CORAL BLOSSOM',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52107X.jpg',gallery:['QC52107X-1.jpg'],desc:'Coral Blossom is a soft blush-pink subway tile with a glossy, translucent glaze that blushes warmer in morning light and cooler at dusk. It is the quietly romantic choice — a colour that is unmistakably intentional yet never saccharine — and sits beautifully with brass taps, warm timber and fluted glass.',style:'Romantic modern; feminine contemporary; boutique hospitality; bridal-bath',use:'Powder room, ensuite wall, boutique retail, dressing room. Recommended laying patterns: herringbone, stack bond, stretcher bond'},
-{id:'QC52108X',name:'AEGEAN BLUE',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52108X.jpg',gallery:['QC52108X-1.jpg'],desc:'Aegean Blue is a dusty mid-blue subway tile with a glossy glaze whose tonal variation recalls the weathered blue of Mediterranean shutters and harbour stone. It brings instant holiday-home ease to a backsplash or bathroom wall without leaning kitsch. A stretcher bond keeps it classic; a herringbone makes it hospitality-grade.',style:'Coastal contemporary; Mediterranean modern; resort casual; cafe chic',use:'Kitchen backsplash, bathroom wall, laundry, cafe wall. Recommended laying patterns: stretcher bond, herringbone, stack bond, diagonal'},
-{id:'QC52109X',name:'MIDNIGHT HARBOUR',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52109X.jpg',gallery:['QC52109X-1.jpg'],desc:'Midnight Harbour is a deep petrol-blue subway tile with a glossy, almost inky glaze that holds remarkable depth under light. It creates a powerful, atmospheric envelope — think hotel whisky bar, city powder room, or a moody kitchen backsplash framed by warm brass. A tile that commits, and rewards the commitment.',style:'Moody luxe; boutique hospitality; urban sophisticated; statement modern',use:'Kitchen backsplash, bar/pantry wall, powder room, hospitality feature. Recommended laying patterns: stack bond, herringbone, stretcher bond, diagonal'},
-{id:'QC52110X',name:'CHARCOAL INK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52110X.jpg',gallery:['QC52110X-1.jpg'],desc:'Charcoal Ink is a warm, near-black subway tile with a rich glossy glaze and the subtlest surface variation — the kind of deep, considered black that anchors a room with quiet authority rather than shouting for attention. Pairs exceptionally with warm brass, natural timber and smoked oak cabinetry for a confident, dark-luxe expression.',style:'Dark luxe; urban modern; boutique hospitality; masculine contemporary',use:'Kitchen backsplash, powder room, bar wall, hospitality feature. Recommended laying patterns: stack bond, stretcher bond, herringbone, basket weave'},
-{id:'QC52111X',name:'EMERALD COURT',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52111X.jpg',gallery:['QC52111X-1.jpg'],desc:'Emerald Court is a deep forest-green subway tile with a glossy glaze that lends the surface the lacquered richness of a members-club wall. It is a colour with real presence — jewel-toned, grown-up and unmistakably luxe — and reads beautifully alongside brass, smoked glass and walnut. A herringbone installation turns a backsplash into a focal point.',style:'Jewel-tone luxe; boutique hospitality; heritage contemporary; bar chic',use:'Bar/pantry feature, kitchen backsplash, powder room, boutique retail. Recommended laying patterns: herringbone, stack bond, stretcher bond, diagonal'},
-{id:'QC52112X',name:'TERRACOTTA SUNSET',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52112X.jpg',gallery:['QC52112X-1.jpg'],desc:'Terracotta Sunset is a warm, earthen red-orange subway tile with a glossy, tonal glaze that carries the sun-warmed depth of fired clay. It brings immediate warmth and narrative to a space — Mediterranean without being pastiche, bold without being brash — and pairs beautifully with lime plaster, oak joinery and matt black fixtures.',style:'Warm earthen; Mediterranean modern; artisanal contemporary; cafe warm',use:'Kitchen backsplash, cafe / bar wall, feature wall, outdoor cooking area. Recommended laying patterns: stretcher bond, herringbone, basket weave, crisscross'},
-// SUBWAY — IRIDESCENT QCL SERIES — 150×150mm & 65×265mm, Glossy pearlescent
-{id:'QCL15001',name:'MOTHER OF PEARL',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15001.jpg',gallery:['QCL15001-2.jpg','QCL15001-3.jpg'],desc:'Mother of Pearl is an iridescent 150×150mm square tile whose pearlescent glaze shifts through lilac, mint and silver as light and angle change — the shimmering quality of an abalone shell translated into a surface. Each tile is subtly unique, and together they create a living, luminous wall that transforms with the time of day. A tile for interiors that reward a second look.',style:'Iridescent luxe; boutique hospitality; editorial modern; bridal bath',use:'Powder room feature wall, bathroom wall, bar/pantry, boutique retail. Recommended laying patterns: stack bond, diagonal, crisscross, feature grid'},
-{id:'QCL15002',name:'PEACOCK LAGOON',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15002.jpg',gallery:['QCL15002-1.jpg','QCL15002-2.jpg','QCL15002-3.jpg','QCL15002-4.jpg','QCL15002-5.jpg','QCL15002-6.jpg'],desc:'Peacock Lagoon is a dramatic 150×150mm iridescent square tile in deep oceanic blue, its oil-slick glaze shifting through peacock teal, amethyst and bronze as the light moves. Every tile is an individual — rich, moody, and impossible to replicate with any other finish. It is the tile for a space designed to be remembered.',style:'Jewel-tone drama; boutique hospitality; maximalist luxe; statement editorial',use:'Powder room feature wall, cocktail bar, spa reception, boutique retail. Recommended laying patterns: stack bond, diagonal, crisscross, feature grid'},
-{id:'QCL15003',name:'OPAL BLUSH',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15003.jpg',gallery:['QCL15003-4.jpg'],desc:'Opal Blush is a softly iridescent 150×150mm square tile in a muted dusty pink-mauve, its quiet shimmer reading as gentle opalescent glow rather than strong rainbow shift. It lends a romantic, dawn-lit quality to walls without tipping into sweetness, and is exceptional alongside warm brass, fluted glass and plaster-textured walls.',style:'Romantic contemporary; soft iridescent; boutique hospitality; quiet luxe',use:'Powder room, ensuite wall, dressing room, boutique retail. Recommended laying patterns: stack bond, diagonal, feature grid'},
-{id:'QCL65265',name:'AURORA DROP',series:'Subway',size:'65×265mm',sizeKey:'65x265',finish:'Glossy',img:'QCL65265-1.jpg',gallery:['QCL65265-1b.jpg','QCL65265-1c.jpg','QCL65265-1d.jpg'],desc:'Aurora Drop is a slim 65×265mm iridescent subway tile with a pearlescent glaze that shifts through mint, lilac and silver with the light — the aurora phenomenon captured in a wall tile. Its narrow, elongated proportion gives installations a crisp, directional rhythm that pairs beautifully with herringbone or stretcher bond layouts where the shimmer can flow across the surface.',style:'Iridescent luxe; boutique hospitality; editorial modern; contemporary statement',use:'Powder room feature wall, cocktail bar backsplash, bathroom wall, boutique retail. Recommended laying patterns: herringbone, stretcher bond, stack bond, diagonal'},
+{id:'QC52100X',name:'PORCELAIN WHITE',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52100X.jpg',gallery:['QC52100X-1.jpg','QC52100X-2.jpg'],desc:'Porcelain White is the definitive clean-white subway tile — a crisp, light-reflective glazed surface with the faintest hand-made irregularity that keeps it feeling crafted rather than clinical.',style:'Classic contemporary; Scandi-modern; fresh coastal',use:'Kitchen backsplash, bathroom feature wall, powder room, laundry'},
+{id:'QC52101X',name:'OAT MILK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52101X.jpg',gallery:['QC52101X-1.jpg'],desc:'Oat Milk is a softly warm cream-ivory subway tile with a glossy glaze that catches the light and wraps a room in quiet warmth.',style:'Warm modern; Japandi; organic contemporary',use:'Kitchen backsplash, breakfast nook, powder room, cafe wall'},
+{id:'QC52102X',name:'DOVE GREY',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52102X.jpg',gallery:['QC52102X-1.jpg'],desc:'Dove Grey is a warm greige subway tile with a subtle mottled glaze that gives the surface a gentle hand-crafted depth.',style:'Soft contemporary; transitional; quiet luxe',use:'Kitchen backsplash, bathroom wall, utility room, powder room'},
+{id:'QC52104X',name:'SAGE PAVILION',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52104X.jpg',gallery:['QC52104X-1.jpg'],desc:'Sage Pavilion is a dusty, herbal green subway tile with a glossy artisanal glaze whose tonal variation recalls aged celadon pottery.',style:'Botanical modern; quiet colour; heritage contemporary',use:'Kitchen backsplash, feature wall, powder room, cafe wall'},
+{id:'QC52105X',name:'MULBERRY DUSK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52105X.jpg',gallery:['QC52105X-1.jpg'],desc:'Mulberry Dusk is a deep, dusty mauve subway tile with a glossy glaze that lends the surface an almost wine-stained richness.',style:'Editorial moody; boutique hospitality; maximalist luxe',use:'Powder room feature wall, bar backsplash, boutique retail'},
+{id:'QC52106X',name:'MUSTARD SILK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52106X.jpg',gallery:['QC52106X-1.jpg'],desc:'Mustard Silk is a warm ochre subway tile with a rich, mottled glaze that reads golden in daylight and honey-deep under warm lighting.',style:'Warm maximalist; Mediterranean modern; cafe chic',use:'Kitchen backsplash, bar feature wall, cafe wall, niche accent'},
+{id:'QC52107X',name:'CORAL BLOSSOM',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52107X.jpg',gallery:['QC52107X-1.jpg'],desc:'Coral Blossom is a soft blush-pink subway tile with a glossy, translucent glaze that blushes warmer in morning light and cooler at dusk.',style:'Romantic modern; feminine contemporary; boutique hospitality',use:'Powder room, ensuite wall, boutique retail, dressing room'},
+{id:'QC52108X',name:'AEGEAN BLUE',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52108X.jpg',gallery:['QC52108X-1.jpg'],desc:'Aegean Blue is a dusty mid-blue subway tile with a glossy glaze whose tonal variation recalls the weathered blue of Mediterranean shutters.',style:'Coastal contemporary; Mediterranean modern; resort casual',use:'Kitchen backsplash, bathroom wall, laundry, cafe wall'},
+{id:'QC52109X',name:'MIDNIGHT HARBOUR',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52109X.jpg',gallery:['QC52109X-1.jpg'],desc:'Midnight Harbour is a deep petrol-blue subway tile with a glossy, almost inky glaze that holds remarkable depth under light.',style:'Moody luxe; boutique hospitality; urban sophisticated',use:'Kitchen backsplash, bar/pantry wall, powder room, hospitality'},
+{id:'QC52110X',name:'CHARCOAL INK',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52110X.jpg',gallery:['QC52110X-1.jpg'],desc:'Charcoal Ink is a warm, near-black subway tile with a rich glossy glaze and the subtlest surface variation.',style:'Dark luxe; urban modern; boutique hospitality',use:'Kitchen backsplash, powder room, bar wall, hospitality feature'},
+{id:'QC52111X',name:'EMERALD COURT',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52111X.jpg',gallery:['QC52111X-1.jpg'],desc:'Emerald Court is a deep forest-green subway tile with a glossy glaze that lends the surface the lacquered richness of a members-club wall.',style:'Jewel-tone luxe; boutique hospitality; heritage contemporary',use:'Bar/pantry feature, kitchen backsplash, powder room'},
+{id:'QC52112X',name:'TERRACOTTA SUNSET',series:'Subway',size:'50×200mm',sizeKey:'50x200',finish:'Glossy',img:'QC52112X.jpg',gallery:['QC52112X-1.jpg'],desc:'Terracotta Sunset is a warm, earthen red-orange subway tile with a glossy, tonal glaze that carries the sun-warmed depth of fired clay.',style:'Warm earthen; Mediterranean modern; artisanal contemporary',use:'Kitchen backsplash, cafe / bar wall, feature wall'},
+// SUBWAY — IRIDESCENT QCL SERIES — 150×150mm & 65×265mm
+{id:'QCL15001',name:'MOTHER OF PEARL',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15001.jpg',gallery:['QCL15001-2.jpg','QCL15001-3.jpg'],desc:'Mother of Pearl is an iridescent 150×150mm square tile whose pearlescent glaze shifts through lilac, mint and silver as light and angle change.',style:'Iridescent luxe; boutique hospitality; editorial modern',use:'Powder room feature wall, bathroom wall, bar/pantry'},
+{id:'QCL15002',name:'PEACOCK LAGOON',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15002.jpg',gallery:['QCL15002-1.jpg','QCL15002-2.jpg','QCL15002-3.jpg'],desc:'Peacock Lagoon is a dramatic 150×150mm iridescent square tile in deep oceanic blue, its oil-slick glaze shifting through peacock teal, amethyst and bronze.',style:'Jewel-tone drama; boutique hospitality; maximalist luxe',use:'Powder room feature wall, cocktail bar, spa reception'},
+{id:'QCL15003',name:'OPAL BLUSH',series:'Subway',size:'150×150mm',sizeKey:'150x150',finish:'Glossy',img:'QCL15003.jpg',gallery:['QCL15003-4.jpg'],desc:'Opal Blush is a softly iridescent 150×150mm square tile in a muted dusty pink-mauve, its quiet shimmer reading as gentle opalescent glow.',style:'Romantic contemporary; soft iridescent; boutique hospitality',use:'Powder room, ensuite wall, dressing room, boutique retail'},
+{id:'QCL65265',name:'AURORA DROP',series:'Subway',size:'65×265mm',sizeKey:'65x265',finish:'Glossy',img:'QCL65265-1.jpg',gallery:['QCL65265-1b.jpg','QCL65265-1c.jpg','QCL65265-1d.jpg'],desc:'Aurora Drop is a slim 65×265mm iridescent subway tile with a pearlescent glaze that shifts through mint, lilac and silver with the light.',style:'Iridescent luxe; boutique hospitality; editorial modern',use:'Powder room feature wall, cocktail bar backsplash, bathroom wall'},
 ];
 
-// ── Filter state ──────────────────────────────────────────────────────
-let fSeries='all', fSize='all', fFinish='all', fSearch='';
+/* ── RENDER ─────────────────────────────────────── */
+const grid=document.getElementById('product-grid');
+const noResults=document.getElementById('no-results');
+const resultCount=document.getElementById('result-count');
+const searchInput=document.getElementById('search-input');
+const statCount=document.getElementById('stat-count');
+statCount.textContent=products.length;
+
+let activeSeries='all', activeSize='all', activeFinish='all', searchVal='';
+let modalIdx=0, filtered=[];
 
 function getFiltered(){
-  const q=fSearch.toLowerCase();
+  const q=searchVal.toLowerCase();
   return products.filter(p=>{
-    if(fSeries!=='all' && p.series!==fSeries) return false;
-    if(fSize!=='all' && p.sizeKey!==fSize) return false;
-    if(fFinish!=='all' && p.finish!==fFinish) return false;
-    if(q && !p.name.toLowerCase().includes(q) && !p.id.toLowerCase().includes(q)) return false;
+    if(activeSeries!=='all'&&p.series!==activeSeries)return false;
+    if(activeSize!=='all'&&p.sizeKey!==activeSize)return false;
+    if(activeFinish!=='all'&&p.finish!==activeFinish)return false;
+    if(q&&!(p.name.toLowerCase().includes(q)||p.id.toLowerCase().includes(q)||(p.desc||'').toLowerCase().includes(q)))return false;
     return true;
   });
 }
 
-function renderCards(){
-  const grid=document.getElementById('product-grid');
-  const noR=document.getElementById('no-results');
-  const countEl=document.getElementById('result-count');
-  const filtered=getFiltered();
-  countEl.textContent=filtered.length+' product'+(filtered.length!==1?'s':'');
-  if(!filtered.length){grid.innerHTML='';noR.style.display='block';return;}
-  noR.style.display='none';
-  const sc=SERIES_COLORS;
-  grid.innerHTML=filtered.map(p=>`
-<div class="card" onclick="openModal('${p.id}')">
-  <div class="card-img">
-    <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.opacity=0">
-    <span class="series-badge" style="background:${sc[p.series]||'#333'}">${p.series}</span>
-    <span class="finish-badge finish-${p.finish.replace(/[^a-zA-Z]/g,'-')}">${p.finish}</span>
-    ${p.notes?`<span class="note-badge">${p.notes.split(' ')[0]}</span>`:''}
-  </div>
-  <div class="card-body">
-    <div class="card-name">${p.name}</div>
-    <div class="card-code">${p.id}</div>
-    <div class="card-size-tag">${p.size}</div>
-    <div class="card-footer">
-      <span class="card-view">View →</span>
-      <a class="card-enquire" href="https://wa.me/6588130033?text=Hi%2C+I%27m+interested+in+${encodeURIComponent(p.name+' ('+p.id+')')}" target="_blank" onclick="event.stopPropagation()">Enquire</a>
-    </div>
-  </div>
-</div>`).join('');
-  document.getElementById('filter-btn').classList.toggle('has-filter',
-    fSeries!=='all'||fSize!=='all'||fFinish!=='all'||fSearch!=='');
-  document.getElementById('clear-btn').classList.toggle('show',
-    fSeries!=='all'||fSize!=='all'||fFinish!=='all'||fSearch!=='');
-  document.getElementById('sheet-apply').textContent='Show '+filtered.length+' Tiles';
+function renderGrid(){
+  filtered=getFiltered();
+  resultCount.textContent=filtered.length+' tile'+(filtered.length!==1?'s':'');
+  grid.innerHTML='';
+  if(!filtered.length){noResults.style.display='';grid.style.display='none';return;}
+  noResults.style.display='none';grid.style.display='';
+  filtered.forEach((p,i)=>{
+    const col=SERIES_COLORS[p.series]||'#b8903a';
+    const c=document.createElement('div');
+    c.className='card';
+    c.innerHTML=`<div class="card-img"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="series-badge" style="background:${col}">${p.series}</span><span class="finish-badge finish-${p.finish.replace(' ','-')}">${p.finish}</span>${p.notes?`<span class="note-badge">${p.notes}</span>`:''}</div><div class="card-body"><div class="card-name">${p.name}</div><div class="card-code">${p.id}</div><div class="card-meta"><span class="tag">${p.size}</span><span class="tag">${p.finish}</span></div></div>`;
+    c.addEventListener('click',()=>openModal(i));
+    grid.appendChild(c);
+  });
 }
 
-// ── Modal ─────────────────────────────────────────────────────────────
-let _modalIdx=-1;
+/* ── MODAL ──────────────────────────────────────── */
+const overlay=document.getElementById('modal-overlay');
+const modalMainImg=document.getElementById('modal-main-img');
+const modalThumbs=document.getElementById('modal-thumbs');
+const modalHeaderName=document.getElementById('modal-header-name');
+const modalHeaderCode=document.getElementById('modal-header-code');
+const modalBadge=document.getElementById('modal-badge');
+const modalName=document.getElementById('modal-name');
+const modalCode=document.getElementById('modal-code');
+const modalSize=document.getElementById('modal-size');
+const modalFinish=document.getElementById('modal-finish');
+const modalSeries=document.getElementById('modal-series');
+const modalId=document.getElementById('modal-id');
+const modalDescFull=document.getElementById('modal-desc-full');
+const modalStyleTags=document.getElementById('modal-style-tags');
+const modalUseText=document.getElementById('modal-use-text');
+const modalDescWrap=document.getElementById('modal-desc-wrap');
+const waBtn=document.getElementById('wa-btn');
+const modalPrev=document.getElementById('modal-prev');
+const modalNext=document.getElementById('modal-next');
 
-function openModal(id){
-  const filtered=getFiltered();
-  _modalIdx=filtered.findIndex(p=>p.id===id);
-  const p=products.find(x=>x.id===id);
-  if(!p)return;
-  const overlay=document.getElementById('modal-overlay');
+function openModal(i){
+  modalIdx=i;
+  const p=filtered[i];
+  const allImgs=[p.img,...(p.gallery||[])];
+  const col=SERIES_COLORS[p.series]||'#b8903a';
+  modalMainImg.src=p.img;
+  modalHeaderName.textContent=p.name;
+  modalHeaderCode.textContent=p.id;
+  modalBadge.textContent=p.series;
+  modalBadge.style.background=col;
+  modalName.textContent=p.name;
+  modalCode.textContent=p.id;
+  modalSize.textContent=p.size;
+  modalFinish.textContent=p.finish;
+  modalSeries.textContent=p.series;
+  modalId.textContent=p.id;
+  if(p.desc){
+    modalDescWrap.style.display='';
+    modalDescFull.textContent=p.desc;
+    modalStyleTags.innerHTML=(p.style||'').split(';').map(s=>`<span class="modal-style-tag">${s.trim()}</span>`).join('');
+    modalUseText.textContent=p.use||'';
+  } else {
+    modalDescWrap.style.display='none';
+  }
+  // thumbs
+  modalThumbs.innerHTML='';
+  allImgs.forEach((img,ti)=>{
+    const t=document.createElement('div');
+    t.className='modal-thumb'+(ti===0?' active':'');
+    t.innerHTML=`<img src="${img}" loading="lazy">`;
+    t.addEventListener('click',()=>{
+      modalMainImg.src=img;
+      modalThumbs.querySelectorAll('.modal-thumb').forEach(th=>th.classList.remove('active'));
+      t.classList.add('active');
+    });
+    modalThumbs.appendChild(t);
+  });
+  const msg=`Hi Ling, I'm interested in the ${p.name} (${p.id}) — ${p.size} ${p.finish}. Could you share more details?`;
+  waBtn.href=`https://wa.me/6588130033?text=${encodeURIComponent(msg)}`;
+  modalPrev.disabled=(i===0);
+  modalNext.disabled=(i===filtered.length-1);
   overlay.classList.add('open');
   document.body.style.overflow='hidden';
-
-  document.getElementById('modal-header-name').textContent=p.name;
-  document.getElementById('modal-header-code').textContent=p.id;
-  document.getElementById('modal-main-img').src=p.img;
-  document.getElementById('modal-badge').textContent=p.series;
-  document.getElementById('modal-badge').style.background=SERIES_COLORS[p.series]||'#333';
-  document.getElementById('modal-name').textContent=p.name;
-  document.getElementById('modal-code').textContent=p.id;
-  document.getElementById('modal-size').textContent=p.size;
-  document.getElementById('modal-finish').textContent=p.finish;
-  document.getElementById('modal-series').textContent=p.series;
-  document.getElementById('modal-id').textContent=p.id;
-
-  // desc/style/use
-  const dw=document.getElementById('modal-desc-wrap');
-  if(p.desc){
-    dw.style.display='block';
-    document.getElementById('modal-desc-full').textContent=p.desc;
-    const tagsEl=document.getElementById('modal-style-tags');
-    if(p.style){
-      tagsEl.innerHTML=p.style.split(';').map(s=>`<span class="modal-style-tag">${s.trim()}</span>`).join('');
-    } else {tagsEl.innerHTML='';}
-    document.getElementById('modal-use-text').textContent=p.use||'';
-  } else {dw.style.display='none';}
-
-  // thumbs
-  const allImgs=[p.img,...(p.gallery||[])];
-  document.getElementById('modal-thumbs').innerHTML=allImgs.map((src,i)=>
-    `<div class="modal-thumb${i===0?' active':''}" data-idx="${i}" onclick="switchThumb(this,'${src}')"><img src="${src}" loading="lazy" alt="" onerror="this.parentElement.style.display='none'"></div>`
-  ).join('');
-
-  // WA link
-  document.getElementById('wa-btn').href=`https://wa.me/6588130033?text=Hi%2C+I%27m+interested+in+${encodeURIComponent(p.name+' ('+p.id+')')}`;
-
-  // nav buttons
-  document.getElementById('modal-prev').disabled=_modalIdx<=0;
-  document.getElementById('modal-next').disabled=_modalIdx>=filtered.length-1;
-
-  // scroll to top of modal body
-  document.querySelector('.modal-body').scrollTop=0;
 }
 
-function switchThumb(el,src){
-  document.getElementById('modal-main-img').src=src;
-  document.querySelectorAll('.modal-thumb').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-}
-
-function closeModal(){
-  document.getElementById('modal-overlay').classList.remove('open');
+document.getElementById('modal-close').addEventListener('click',()=>{
+  overlay.classList.remove('open');
   document.body.style.overflow='';
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-
-document.getElementById('modal-close').addEventListener('click',closeModal);
-document.getElementById('modal-prev').addEventListener('click',function(){
-  const f=getFiltered();
-  if(_modalIdx>0){_modalIdx--;openModal(f[_modalIdx].id);}
 });
-document.getElementById('modal-next').addEventListener('click',function(){
-  const f=getFiltered();
-  if(_modalIdx<f.length-1){_modalIdx++;openModal(f[_modalIdx].id);}
-});
+modalPrev.addEventListener('click',()=>{if(modalIdx>0)openModal(modalIdx-1);});
+modalNext.addEventListener('click',()=>{if(modalIdx<filtered.length-1)openModal(modalIdx+1);});
 
-// swipe to close / next/prev modal
-let _touchStartX=0;
-document.querySelector('.modal-body').addEventListener('touchstart',function(e){
-  _touchStartX=e.changedTouches[0].screenX;
-},{passive:true});
-document.querySelector('.modal-body').addEventListener('touchend',function(e){
-  const dx=e.changedTouches[0].screenX-_touchStartX;
-  if(Math.abs(dx)<60)return;
-  const f=getFiltered();
-  if(dx<-60 && _modalIdx<f.length-1){_modalIdx++;openModal(f[_modalIdx].id);}
-  else if(dx>60 && _modalIdx>0){_modalIdx--;openModal(f[_modalIdx].id);}
-},{passive:true});
-
-// Escape key
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
-
-// ── Filter sheet ──────────────────────────────────────────────────────
-function openSheet(){
-  document.getElementById('filter-sheet').classList.add('open');
-  document.getElementById('sheet-overlay').classList.add('open');
-  document.body.style.overflow='hidden';
+/* ── CHIPS ──────────────────────────────────────── */
+function bindChips(containerId,setter){
+  document.getElementById(containerId).addEventListener('click',e=>{
+    const btn=e.target.closest('.chip');
+    if(!btn)return;
+    document.getElementById(containerId).querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    setter(btn.dataset.val);
+    renderGrid();
+  });
 }
-function closeSheet(){
-  document.getElementById('filter-sheet').classList.remove('open');
-  document.getElementById('sheet-overlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-document.getElementById('filter-btn').addEventListener('click',openSheet);
-document.getElementById('sheet-overlay').addEventListener('click',closeSheet);
-document.getElementById('sheet-apply').addEventListener('click',function(){
+bindChips('series-chips',v=>{activeSeries=v;});
+bindChips('size-chips',v=>{activeSize=v;});
+bindChips('finish-chips',v=>{activeFinish=v;});
+
+searchInput.addEventListener('input',()=>{searchVal=searchInput.value;renderGrid();});
+
+/* ── FILTER SHEET ───────────────────────────────── */
+const filterBtn=document.getElementById('filter-btn');
+const filterSheet=document.getElementById('filter-sheet');
+const sheetOverlay=document.getElementById('sheet-overlay');
+function openSheet(){filterSheet.classList.add('open');sheetOverlay.classList.add('show');document.body.style.overflow='hidden';}
+function closeSheet(){filterSheet.classList.remove('open');sheetOverlay.classList.remove('show');document.body.style.overflow='';}
+filterBtn.addEventListener('click',openSheet);
+sheetOverlay.addEventListener('click',closeSheet);
+document.getElementById('sheet-apply').addEventListener('click',closeSheet);
+document.getElementById('sheet-clear').addEventListener('click',()=>{
+  activeSeries='all';activeSize='all';activeFinish='all';searchVal='';
+  searchInput.value='';
+  ['series-chips','size-chips','finish-chips'].forEach(id=>{
+    const chips=document.getElementById(id).querySelectorAll('.chip');
+    chips.forEach((c,i)=>{if(i===0)c.classList.add('active');else c.classList.remove('active');});
+  });
+  renderGrid();
   closeSheet();
-  renderCards();
-  document.getElementById('collection').scrollIntoView({behavior:'smooth'});
 });
-
-// Chip selection in sheet
-document.querySelectorAll('.chip[data-filter]').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    const filter=this.dataset.filter;
-    const val=this.dataset.val;
-    // deactivate siblings
-    document.querySelectorAll(`.chip[data-filter="${filter}"]`).forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-    if(filter==='series') fSeries=val;
-    else if(filter==='size') fSize=val;
-    else if(filter==='finish') fFinish=val;
-    document.getElementById('sheet-apply').textContent='Show '+getFiltered().length+' Tiles';
+document.getElementById('clear-btn').addEventListener('click',()=>{
+  activeSeries='all';activeSize='all';activeFinish='all';searchVal='';
+  searchInput.value='';
+  ['series-chips','size-chips','finish-chips'].forEach(id=>{
+    const chips=document.getElementById(id).querySelectorAll('.chip');
+    chips.forEach((c,i)=>{if(i===0)c.classList.add('active');else c.classList.remove('active');});
   });
+  renderGrid();
 });
 
-// Sheet reset
-document.getElementById('sheet-clear').addEventListener('click',function(){
-  fSeries='all';fSize='all';fFinish='all';
-  document.querySelectorAll('.chip[data-filter]').forEach(b=>{
-    b.classList.toggle('active',b.dataset.val==='all');
-  });
-  document.getElementById('sheet-apply').textContent='Show '+products.length+' Tiles';
-});
-
-// Clear from main bar
-document.getElementById('clear-btn').addEventListener('click',function(){
-  fSeries='all';fSize='all';fFinish='all';fSearch='';
-  document.getElementById('search-input').value='';
-  document.querySelectorAll('.chip[data-filter]').forEach(b=>{
-    b.classList.toggle('active',b.dataset.val==='all');
-  });
-  renderCards();
-});
-
-// Search
-document.getElementById('search-input').addEventListener('input',function(){
-  fSearch=this.value.trim();
-  renderCards();
-});
-
-// ── Init ─────────────────────────────────────────────────────────────
-renderCards();
-document.getElementById('stat-count').textContent=products.length;
-
-}); // end DOMContentLoaded
+renderGrid();
 </script>
 </body>
 </html>
